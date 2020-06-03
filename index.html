@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<h2>Which rabbit will you get?</h2>
+
+<p>Every time you reload the page, you get a different rabbit.</p>
+
+<aside>
+
+<img src="https://media.npr.org/assets/img/2017/09/14/gettyimages-10141026_slide-67be9fc1bca330b26debade87690b5e84286614d.jpg">
+
+</aside>
+
+<aside>
+
+<img src="https://cdn.mos.cms.futurecdn.net/65xDQxBV26qkgupGHbJSSZ-1200-80.jpg">
+
+</aside>
+
+<aside>
+
+<img src="https://static.vets-now.com/uploads/2019/10/rabbit1.jpg">
+
+</aside>
+
+
+<p>There's probably a better way to do this, but this seemed like the lightest-weight way to remain analytics agnostic and easy to implement.</p>
+
+<script>
+	var elems = $("aside");
+if (elems.length) {
+  var keep = Math.floor(Math.random() * elems.length);
+  for (var i = 0; i < elems.length; ++i) {
+    if (i !== keep) {
+      $(elems[i]).hide();
+    }
+  }
+}
+</script>
+
+</body>
+</html>
